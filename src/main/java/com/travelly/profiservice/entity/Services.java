@@ -24,11 +24,11 @@ public class Services {
     private UUID id;
 
 
-    @Column(name = "user_id")
+    @JoinColumn(name = "user_id")
     @GeneratedValue(generator = "UUID")
     private UUID userId;
 
-    @Column(name = "category_id")
+    @JoinColumn(name = "category_id")
     @GeneratedValue(generator = "UUID")
     private UUID categoryId;
 
