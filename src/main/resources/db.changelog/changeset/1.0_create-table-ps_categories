@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Vladimir-B
+      changes:
+        - createTable:
+            tableName: ps_categories
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: category_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    foreignKeyName:
