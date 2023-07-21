@@ -3,6 +3,12 @@ databaseChangeLog:
       id: 1
       author: Vladimir-B
       changes:
+        - sql:
+            dbms: postgresql
+            endDelimiter: ;
+            splitStatements: true
+            sql: |
+              CREATE SCHEMA IF NOT EXISTS postgres;
         - createTable:
             tableName: ps_categories
             columns:
@@ -17,4 +23,3 @@ databaseChangeLog:
                   type: varchar
                   constraints:
                     nullable: false
-                    foreignKeyName:

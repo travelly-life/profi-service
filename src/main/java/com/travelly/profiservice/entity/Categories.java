@@ -19,5 +19,5 @@ public class Categories {
     private UUID id;
 
     @Column(name = "category_name")
-    private char category_name;
+    private String category_name;
 }
