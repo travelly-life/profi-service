@@ -17,5 +17,5 @@ spring:
     liquibase-schema: public
     user: postgres
     password: admin
-    change-log:
+    change-log: classpath:db.changelog/db.changelog-master.yaml
 

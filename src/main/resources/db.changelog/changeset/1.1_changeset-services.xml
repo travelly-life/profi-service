@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet id="1" author="vyacheslav_turchkov">
+    <sql>
+        create schema if not exists postgres;
+    </sql>
+        <createTable tableName="ps_services">
+            <column name="id" type="uuid" remarks="Идентификатор услуги">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="user_id" type="uuid" remarks="Идентификатор пользователя, предлагающего услугу">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category_id" type="uuid" remarks="Идентификатор категории">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="varchar(255)" remarks="Заголовок">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="text(65535)" remarks="Описание">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="numeric" remarks="Цена">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp" remarks="Дата создания">
+                <constraints nullable="true"/>
+            </column>
+            <column name="status" type="varchar(255)" remarks="Статус">
+                <constraints nullable="true"/>
+            </column>
+            <column name="contact" type="varchar(255)" remarks="Контакты">
+                <constraints nullable="true"/>
+            </column>
+            <column name="is_active" type="boolean" remarks="Признак актуальности">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="ps_services"/>
+        </rollback>
+</changeSet>
+</databaseChangeLog>
