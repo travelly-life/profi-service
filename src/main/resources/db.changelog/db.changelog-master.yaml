@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db.changelog/changeset/1.0_create-table-ps_categories.yaml
   - include:
       file: db.changelog/changeset/1.1_changeset-services.xml
+  - include:
+      file: db.changelog/changeset/1.2_create-table-ps_orders.yaml
